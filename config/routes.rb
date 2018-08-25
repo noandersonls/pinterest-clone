@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get 'pages/index'
+  devise_for :users
+  resources :users
+  resources :products
+  resources :countries
+  
+  get 'pages/home'
 
-  root 'pages#index'
+  root 'pages#home'
 
 end 
